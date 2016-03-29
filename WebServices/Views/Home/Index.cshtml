@@ -7,8 +7,8 @@
     <script src="~/Scripts/Home/Index.js"></script>
 }
 
-<div id="summaryDiplay" class="display">
-    <h4>Reservation</h4>
+<div id="summaryDisplay" class="display">
+    <h4>Reservations</h4>
     <table>
         <thead>
             <tr>
@@ -34,7 +34,8 @@
     @{
         AjaxOptions addAjaxOpts = new AjaxOptions
         {
-            //options will go here
+            OnSuccess = "getData",
+            Url = "/api/reservation"
         };
     }
     @using (Ajax.BeginForm(addAjaxOpts))
